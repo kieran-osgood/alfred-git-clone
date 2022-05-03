@@ -37,6 +37,20 @@ The following variables are meant to be set in the [workflow configuration sheet
 * `workspace_dir`: the path of the root folder where all your projects live (default:`$HOME`)
 * `max_recent_items`: max number of history items to show (default: 2)
 
+## Troubleshooting
+### ERROR: Clone git repo[Script Filter] Code 127: /bin/bash: /usr/bin/local/python: No such file or directory
+Python binary cannot be located.
+
+Run `which python` - you should see output to the binary for the `python` cli (e.g. `/usr/bin/python`, if not then follow [installation steps](https://www.python.org/downloads/).
+
+> (note: download python2 for this workflow)
+
+If you have installed a specific version and it comes under `/usr/bin/pythonX` you can adjust the workflow so that it points to an installation of python2
+![image](https://user-images.githubusercontent.com/17687552/166443906-84b54f9a-f3b1-4a31-8e11-f34a7b9e026b.png)
+
+### ModuleNotFoundError: No module named 'cPickle'
+[cPickle is no longer valid in python3](https://stackoverflow.com/questions/49579282/cant-find-module-cpickle-using-python-3-5-and-anaconda), so target python2 for the workflow.
+
 ## Acknowledgements
 
 This workflow uses the awesome 😎 [Alfred-Workflow](http://www.deanishe.net/alfred-workflow/) Python library by [deanishe](https://www.alfredforum.com/profile/5235-deanishe/).
